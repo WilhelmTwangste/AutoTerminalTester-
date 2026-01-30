@@ -12,9 +12,9 @@ void setup()
     servoY.attach(10); // Y
     servoZ.attach(11); // head, static
 
-    servoX.write(108); //право-лево
-    servoY.write(72); //нажатие
-    servoZ.write(10); //вверх-низ
+    servoX.write(108); //РїСЂР°РІРѕ-Р»РµРІРѕ
+    servoY.write(72); //РЅР°Р¶Р°С‚РёРµ
+    servoZ.write(10); //РІРІРµСЂС…-РЅРёР·
 
     delay(500);
     Serial.begin(9600);
@@ -22,17 +22,17 @@ void setup()
 
 int term_x[5][4] = {
     { 108, 99, 90, 80}, //F1, F2, F3, F4
-  { 107, 99, 89, 79}, //1, 2, 3, выкл
-  { 107, 99, 89, 79}, //4, 5, 6, красная
-  { 110, 100, 87, 74}, //7, 8, 9, желтая
-  { 113, 100, 87, 74} //*, 0, #, зеленая
+  { 107, 99, 89, 79}, //1, 2, 3, РІС‹РєР»
+  { 107, 99, 89, 79}, //4, 5, 6, РєСЂР°СЃРЅР°СЏ
+  { 110, 100, 87, 74}, //7, 8, 9, Р¶РµР»С‚Р°СЏ
+  { 113, 100, 87, 74} //*, 0, #, Р·РµР»РµРЅР°СЏ
 };
 int term_y[5][4] = {
     { 74, 74, 74, 74}, //F1, F2, F3, F4
-  { 79, 79, 79, 79}, //1, 2, 3, выкл
-  { 89, 89, 89, 89}, //4, 5, 6, красная
-  { 96, 96, 96, 96}, //7, 8, 9, желтая
-  { 104, 105, 104, 104} //*, 0, #, зеленая
+  { 79, 79, 79, 79}, //1, 2, 3, РІС‹РєР»
+  { 89, 89, 89, 89}, //4, 5, 6, РєСЂР°СЃРЅР°СЏ
+  { 96, 96, 96, 96}, //7, 8, 9, Р¶РµР»С‚Р°СЏ
+  { 104, 105, 104, 104} //*, 0, #, Р·РµР»РµРЅР°СЏ
 };
 
 void serv_click(int i, int j)
@@ -95,13 +95,13 @@ void operations(int operation, int position, int check, String sum_pur, String s
         }
     }
     if (operation == 1)
-    { //оплата
+    { //РѕРїР»Р°С‚Р°
         serv_click(4, 3);
         click_sum(sum_pur);
         serv_click(4, 3);
     }
     if (operation == 3)
-    { //отмена
+    { //РѕС‚РјРµРЅР°
         serv_click(4, 3);
         click_sum(String(check));
         serv_click(4, 3);
@@ -122,7 +122,7 @@ void operations(int operation, int position, int check, String sum_pur, String s
         }
     }
     if (operation == 2)
-    { //возврат
+    { //РІРѕР·РІСЂР°С‚
         serv_click(4, 3);
         click_sum(sum_pur);
         serv_click(4, 3);
@@ -197,7 +197,7 @@ void loop()
                 operations(operation_string.toInt(), position_string.toInt(), checks_pur[j], sum_pur, sum_re);
                 j++;
             }
-            ///оделать
+            ///РѕРґРµР»Р°С‚СЊ
             // else operations(operation_string.toInt(), position_string.toInt(), checks_pur[j], sum_pur, sum_re);
 
             else if (oper[i] == '4')
